@@ -17,14 +17,20 @@ int Player::get_money(int &dollar)
 
 void Player::showMoney()
 {
+	// sorting money from biggest to smallest
+	sort(wallet.begin(), wallet.end(), [](int a, int b) 
+		{
+			return a > b;
+		});
+
+	// full amount in wallet
 	cout << name << " got " << money << " dollars\n\n";
 
-
-
+	// show all donation list
 	cout << "In wallet now\n";
 	for (int i = 0; i < wallet.size(); ++i)
 	{
-		cout << wallet[i] << endl;
+		cout << wallet[i] << "\n";
 	}
 }
 
