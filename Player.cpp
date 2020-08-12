@@ -3,7 +3,14 @@
 
 using namespace std;
 
-Player::Player()
+
+Player::Player(string &n)
+{
+	name = n;
+	wallet.push_back(1000);
+}
+
+Player::~Player()
 {
 }
 
@@ -34,13 +41,12 @@ void Player::showMoney()
 	}
 }
 
-string Player::get_name(string &n)
+string Player::get_name()
 {
-	name = n;
 	return name;
 }
 
-void Player::sayHello(string &name)
+void Player::sayHello()
 {
 	cout << "Hi " << name << " !" << endl;
 }

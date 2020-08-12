@@ -6,20 +6,21 @@ using namespace std;
 
 int main()
 {
-	Player p;
-
 	cout << "Hello! Type your name: " << endl;
 	string pName;
 	cin >> pName;
-	p.get_name(pName);
-	int donate;
 
-	cout << endl;
-	p.sayHello(pName);
+
+	// Creates a new player and greets
+	Player p(pName);
 	cout << "\n";
-	cout << "Donate money to " << pName << "\n $: ";
+	p.sayHello();
+	cout << "\n";
 
-
+	
+	// Asking for donation
+	cout << "Donate money to " << p.get_name() << "\n $: ";
+	int donate;
 	do
 	{
 		cin >> donate;
@@ -28,6 +29,8 @@ int main()
 		cout << "Wanna donate more?\n $: ";
 	}while (donate != 0);
 
+
+	// Shows and counts all money in wallet
 	p.showMoney();
 
 }
